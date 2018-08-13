@@ -7,12 +7,12 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=31,
     unique=True, help_text='A label for URL config.')
 
-    def __st__(self):
-        return self.name
-
     class Meta:
         ordering = ['name']
 
+    def __str__(self):
+        return self.name
+        
 class Startup(models.Model):
     name = models.CharField(max_length=31, db_index = True)
     slug = models.SlugField(max_length=31, unique = True,
